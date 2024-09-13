@@ -46,6 +46,8 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 - Clone o repositório
 - Instale as dependências com `pnpm install`
+- E rode as migrations com `pnpm run db:migration`
+- E se quiser popular o bando de dados rode `pnpm run db:seed`
 - Inicie o servidor em modo desenvolvedor `pnpm run dev`
 - Faça a build do projeto `pnpm run build`
 - Iniciar o projeto `pnpm start`
