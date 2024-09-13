@@ -12,7 +12,7 @@ importers:
         specifier: ^2.1.2
         version: 2.1.2
 
-  server:
+  apps/server:
     dependencies:
       '@fastify/cors':
         specifier: ^9.0.1
@@ -67,7 +67,7 @@ importers:
         specifier: ^5.5.4
         version: 5.6.2
 
-  web:
+  apps/web:
     dependencies:
       '@hookform/resolvers':
         specifier: ^3.9.0
