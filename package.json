@@ -1,17 +1,22 @@
 {
   "name": "in.orbit",
-  "version": "1.0.0",
-  "description": "",
   "private": "true",
-  "main": "index.js",
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "clean architecture",
+    "clean code",
+    "ddd",
+    "solid",
+    "design patterns",
+    "node",
+    "typescript",
+    "drizzle-orm"
+  ],
+  "author": "Elivelton Santos",
   "devDependencies": {
     "turbo": "^2.1.2"
   },
