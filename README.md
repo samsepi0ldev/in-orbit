@@ -46,13 +46,13 @@ Você pode visualizar o layout do projeto através [desse link](https://www.figm
 
 - Clone o repositório
 - Instale as dependências com `pnpm install`
-- E rode as migrations com `pnpm run db:migration`
+- E rode as migrations com `pnpm run db:migrate`
 - E se quiser popular o bando de dados rode `pnpm run db:seed`
 - Inicie o servidor em modo desenvolvedor `pnpm run dev`
 - Faça a build do projeto `pnpm run build`
 - Iniciar o projeto `pnpm start`
 
-Agora você pode acessar web [`localhost:3000`](http://localhost:5173/) e o server [`localhost:3333/api`](http://localhost:3333/)
+Agora você pode acessar web [`localhost:5173`](http://localhost:5173/) e o server [`localhost:3333`](http://localhost:3333/)
 
 ## 💜 Agradecimentos
 
