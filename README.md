@@ -32,6 +32,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias e monorepo com [turbo
   - [TypeScript](https://www.typescriptlang.org/)
   - [Drizzle ORM](https://orm.drizzle.team/)
   - [Fastify](https://fastify.dev/)
+  - [Docker](https://www.docker.com/)
 
 ## 💻 Projeto
 
