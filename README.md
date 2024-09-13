@@ -1,5 +1,11 @@
 <h1 align="center">NLW Pocket</h1>
 
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=nlw&message=Pocket&color=blueviolet&style=for-the-badge"/>
+  <img src="https://img.shields.io/github/license/samsepi0ldev/in-orbit?color=blueviolet&logo=License&style=for-the-badge"/>
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/samsepi0ldev/in-orbit?color=blueviolet&logo=TypeScript&logoColor=white&style=for-the-badge">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/samsepi0ldev/in-orbit?color=blueviolet&style=for-the-badge">
+</p>
 <p style="text-align: center">
   O projeto é um site desktop de registro de metas com progresso semanal.
   Esse é um projeto do evento NLW Pocket Javascript, um dos conteúdos disponíveis para alunos da Rocketseat.
