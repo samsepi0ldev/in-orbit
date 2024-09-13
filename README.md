@@ -20,17 +20,26 @@
 
 ## ✨ Tecnologias
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+Esse projeto foi desenvolvido com as seguintes tecnologias e monorepo com [turbo](https://turbo.build/):
 - [Web 🌐](./web):
   - [Vite](https://vitejs.dev/)
   - [React](https://reactjs.org)
   - [TypeScript](https://www.typescriptlang.org/)
   - [Tailwindcss](https://tailwindcss.com/)
+  - [TanStack Query](https://tanstack.com/query/latest)
 - [Server 💻](./server):
   - [Node.js](https://nodejs.org/en/)
   - [TypeScript](https://www.typescriptlang.org/)
   - [Drizzle ORM](https://orm.drizzle.team/)
-  - [Turbo](https://turbo.build/)
+  - [Fastify](https://fastify.dev/)
+
+## 💻 Projeto
+
+Explore um aplicativo JavaScript full-stack criado com Node.js, React e PostgreSQL. Este projeto se concentra na criação de um rastreador de hábitos robusto, seguindo os princípios SOLID para garantir um código limpo, modular e escalável. Utilize design patterns para resolver problemas comuns e otimizar a arquitetura do sistema. Aprenda conceitos avançados, como consultas SQL, gerenciamento de estado e visualização de dados. Contribua para um projeto que prioriza código limpo, manutenibilidade e melhores práticas.
+
+## 🔖 Layout
+
+Você pode visualizar o layout do projeto através [desse link](https://www.figma.com/community/file/1415093862269754302/nlw-pocket-js-in-orbit). É necessário ter conta no [Figma](http://figma.com/) para acessá-lo.
 
 ## 🚀 Como executar
 
@@ -50,4 +59,4 @@ Agora você pode acessar web [`localhost:3000`](http://localhost:5173/) e o serv
 
 ---
 
-Feito com ♥ by Elivelton Santos 👋🏻
+Feito com ❤️‍🔥 by Elivelton Santos 👋🏻
