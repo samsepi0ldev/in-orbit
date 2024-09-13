@@ -1,5 +1,5 @@
-import { Plus } from 'lucide-react'
-import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { Loader2, Plus } from 'lucide-react'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 
 import { Button } from './ui/button'
 import { getPendingGoals } from '../http/get-pending-goals'
@@ -14,17 +14,24 @@ export function PendingGoals() {
     queryFn: getPendingGoals
   })
 
-  async function handleCreateGoalCompletion(goalId: string) {
-    await createGoalCompletion(goalId)
-
-    queryClient.invalidateQueries({ queryKey: ['pending-goals'] })
-    queryClient.invalidateQueries({ queryKey: ['summary'] })
-  }
+  const { data: result, mutateAsync, isPending, variables } = useMutation({
+    mutationFn: (goalId: string) => createGoalCompletion(goalId),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['pending-goals'] })
+      queryClient.invalidateQueries({ queryKey: ['summary'] })
+    }
+  })
+  
 
   if (isLoading || !data) {
-    return <span>Carregando</span>
+    return (
+      <div className='max-w-sm animate-pulse space-x-2'>
+        {Array.from({ length: 3 }, (_, i) => (
+          <div key={i} className='px-3 py-2 rounded-full w-24 h-8 bg-zinc-700 inline-block' />
+        ))}
+      </div>
+    )
   }
-
 
   return (
     <div className='flex flex-wrap gap-2'>
@@ -33,10 +40,14 @@ export function PendingGoals() {
           key={goal.id}
           variant='outline'
           size='sm'
-          disabled={goal.completionCount === goal.desiredWeeklyFrequency}
-          onClick={() => handleCreateGoalCompletion(goal.id)}
+          disabled={goal.completionCount === goal.desiredWeeklyFrequency || isPending && variables === goal.id}
+          onClick={() => mutateAsync(goal.id)}
         >
-          <Plus className='size-4' />
+          { isPending && variables === goal.id ? (
+            <Loader2 className='size-4 animate-spin' />
+          ) : (
+            <Plus className='size-4' />
+          )}
           {goal.title}
         </Button>
       ))}

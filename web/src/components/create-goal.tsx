@@ -2,13 +2,15 @@ import { Controller, useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { toast } from 'sonner'
-import { useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { DialogContent, DialogTitle, DialogDescription, DialogClose } from './ui/dialog'
 import { RadioGroup, RadioGroupItem, RadioGroupIndicator } from './ui/radio'
 import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { createGoal } from '../http/create-goal'
+import { useState } from 'react'
+import { Loader2 } from 'lucide-react'
 
 const createGoalSchema = z.object({
   title: z.string().min(1, 'Informe a atividade que deseja praticar.'),
@@ -19,6 +21,7 @@ type CreateGoal = z.infer<typeof createGoalSchema>
 
 export function CreateGoal() {
   const queryClient = useQueryClient()
+  const [isLoading, setIsLoading] = useState(false)
 
   const {
     register,
@@ -32,6 +35,8 @@ export function CreateGoal() {
 
   async function handleCreateGoal(data: CreateGoal) {
     try {
+      setIsLoading(true)
+      
       await createGoal(data)
       toast.success('Meta criada com sucesso!')
 
@@ -39,9 +44,10 @@ export function CreateGoal() {
 
       queryClient.invalidateQueries({ queryKey: ['summary'] })
       queryClient.invalidateQueries({ queryKey: ['pending-goals'] })
-
     } catch (error) {
       toast.error('Houve um erro ao tentar criar meta.')
+    } finally {
+      setIsLoading(false)
     }
   }
 
@@ -117,7 +123,8 @@ export function CreateGoal() {
               Fechar
             </Button>
           </DialogClose>
-          <Button className='w-full' type='submit'>
+          <Button className='w-full' type='submit' disabled={isLoading}>
+            {isLoading && <Loader2 className='size-4 animate-spin' />}
             Salvar
           </Button>
         </div>

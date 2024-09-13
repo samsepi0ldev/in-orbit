@@ -1,3 +1,5 @@
+import './config/module-alias'
+
 import fastify from 'fastify'
 import {
   serializerCompiler,
